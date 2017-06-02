@@ -30,6 +30,7 @@ app.use((req,res,next)=>{
 
 
 app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/views/cal'));
 
 hbs.registerHelper('getCurrentYear',()=>{
     return new Date().getFullYear();
@@ -55,6 +56,14 @@ app.get('/project',(req,res)=>{
     res.render('project.hbs',{
         title:'Project',
     });
+})
+
+app.get('/calculator',(req,res)=>{
+    res.render('calculator.hbs');
+})
+
+app.get('/calculator',(req,res)=>{
+    res.render('index.css');
 })
 
 app.get('/',(req,res) => {
